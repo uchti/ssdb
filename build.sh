@@ -136,7 +136,7 @@ echo "CFLAGS += ${PLATFORM_CFLAGS}" >> build_config.mk
 echo "CFLAGS += -I \"$LEVELDB_PATH/include\"" >> build_config.mk
 
 echo "CLIBS=" >> build_config.mk
-echo "CLIBS += \"$LEVELDB_PATH/out-static/libleveldb.a\"" >> build_config.mk
+echo "CLIBS += \"$LEVELDB_PATH/build/libleveldb.a\"" >> build_config.mk
 echo "CLIBS += \"$SNAPPY_PATH/.libs/libsnappy.a\"" >> build_config.mk
 
 case "$TARGET_OS" in

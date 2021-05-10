@@ -19,10 +19,10 @@ all:
 	
 ios:
 	
-	cd "${LEVELDB_PATH}"; cmake --build; CXXFLAGS=-stdlib=libc++ ${MAKE} PLATFORM=IOS
+	cd "${LEVELDB_PATH}"; rm -rf build; mkdir -p build && cd build; cmake -DCMAKE_BUILD_TYPE=Release -DLEVELDB_BUILD_BENCHMARKS=OFF -DLEVELDB_BUILD_TESTS=OFF .. && cmake --build .
 	cd "${SNAPPY_PATH}"; make clean; make -f Makefile-ios
 	mkdir -p ios
-	mv ${LEVELDB_PATH}/out-ios-universal/libleveldb.a ios/libleveldb-ios.a
+	mv ${LEVELDB_PATH}/build/libleveldb.a ios/libleveldb-ios.a
 	mv ${SNAPPY_PATH}/libsnappy-ios.a ios/
 	cd src/util; make clean; ${MAKE} -f Makefile-ios
 	cd src/ssdb; make clean; ${MAKE} -f Makefile-ios
