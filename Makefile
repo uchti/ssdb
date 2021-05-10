@@ -7,7 +7,7 @@ all:
 	mkdir -p var var_slave
 	chmod u+x deps/cpy/cpy
 	chmod u+x tools/ssdb-cli
-	cd "${LEVELDB_PATH}"; rm -rf build; mkdir -p build && cd build; cmake -DCMAKE_BUILD_TYPE=Release -DLEVELDB_BUILD_BENCHMARKS=OFF -DLEVELDB_BUILD_TESTS=OFF.. && cmake --build .
+	cd "${LEVELDB_PATH}"; rm -rf build; mkdir -p build && cd build; cmake -DCMAKE_BUILD_TYPE=Release -DLEVELDB_BUILD_BENCHMARKS=OFF -DLEVELDB_BUILD_TESTS=OFF .. && cmake --build .
 	cd src/util; ${MAKE}
 	cd src/net; ${MAKE}
 	cd src/client; ${MAKE}
