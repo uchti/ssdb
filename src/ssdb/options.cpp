@@ -22,7 +22,6 @@ void Options::load(const Config &conf){
 	max_open_files = (size_t)conf.get_num("leveldb.max_open_files");
 	write_buffer_size = (size_t)conf.get_num("leveldb.write_buffer_size");
 	block_size = (size_t)conf.get_num("leveldb.block_size");
-	compaction_speed = conf.get_num("leveldb.compaction_speed");
 	compression = conf.get_str("leveldb.compression");
 	std::string binlog = conf.get_str("replication.binlog");
 	binlog_capacity = (size_t)conf.get_num("replication.binlog.capacity");
